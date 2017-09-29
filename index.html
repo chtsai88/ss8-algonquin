@@ -20,9 +20,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <section></section>
           <section>Left Slide</section>
-          <section></section>
         </section>
         <section id="middle">
           <section>Up Slide</section>
@@ -30,9 +28,7 @@
           <section>Down Side</section>
         </section>
         <section>
-          <section></section>
           <section>Right Slide</section>
-          <section></section>
         </section>
       </div>
     </div>
@@ -49,13 +45,16 @@
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
       ],
       keyboard: {
+        27: null,
         37: () => {
           let state = Reveal.getState()
           Reveal.slide(state.indexh - 1, state.indexv)
+          Reveal.slide(state.indexh - 1, 1)
         },
         39: () => {
           let state = Reveal.getState()
           Reveal.slide(state.indexh + 1, state.indexv)
+          Reveal.slide(state.indexh + 1, 1)
         },
       }
     })
