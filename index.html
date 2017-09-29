@@ -47,7 +47,17 @@
         { src: 'plugin/markdown/markdown.js' },
         { src: 'plugin/notes/notes.js', async: true },
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-      ]
+      ],
+      keyboard: {
+        37: () => {
+          let state = Reveal.getState()
+          Reveal.slide(state.indexh - 1, state.indexv)
+        },
+        39: () => {
+          let state = Reveal.getState()
+          Reveal.slide(state.indexh + 1, state.indexv)
+        },
+      }
     })
     Reveal.addEventListener('middle', () => {
       Reveal.navigateTo(1, 1)
